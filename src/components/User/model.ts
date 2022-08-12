@@ -1,7 +1,7 @@
 import { Schema, model, connect } from 'mongoose';
 import connections from '../../config/connection';
 
-interface IUser {
+export interface IUser {
     fullName: string;
     email: string;
     collection : 'usermodel';
@@ -13,4 +13,4 @@ const UserSchema = new Schema<IUser>({
     collection: 'usermodel',
 });
 
-export = connections.model("UserModel", UserSchema);
+export const UserModel = connections.model("UserModel", UserSchema);

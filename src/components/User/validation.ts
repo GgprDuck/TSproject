@@ -1,6 +1,20 @@
+import { ParamsDictionary } from "express-serve-static-core";
 import Validation from "../validation";
 
 class UserValidation extends Validation {
+    static findById(params: ParamsDictionary): { error: any; } {
+        throw new Error('Method not implemented.');
+    }
+    static create(body: any): { error: any; } {
+        throw new Error('Method not implemented.');
+    }
+    static updateById(body: any): { error: any; } {
+        throw new Error('Method not implemented.');
+    }
+    static deleteById(body: any): { error: any; } {
+        throw new Error('Method not implemented.');
+    }
+    
     findById(data: object): void {
         return this.Joi
             .object({
@@ -44,4 +58,4 @@ class UserValidation extends Validation {
     }
 }
 
-export = new UserValidation();
+export = UserValidation;
